@@ -1,0 +1,31 @@
+@import './config';
+
+.friends {
+    display: grid;
+    min-height: 100%;
+    grid-template-columns: repeat(4, 20%);
+    gap: 1%;
+    margin: 1em auto;
+    align-content: center;
+    place-content: center;
+    & > * {
+        box-sizing: border-box;
+        border: unset;
+
+        & > div {
+            margin: unset;
+            // border-radius: unset;
+            border: 1px solid black;
+            box-shadow: 2px 2px 0px 1px #292f42;
+        }
+    }
+}
+
+@media (width < $mobile-width) {
+    .friends {
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        place-content: center;
+    }
+}

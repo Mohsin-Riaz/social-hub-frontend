@@ -1,0 +1,84 @@
+$color1: #f1eeef;
+$color2: #8189a9;
+$color3: #6a869f;
+$color4: #876372;
+$color5: #292f42;
+$color6: hsl(186, 50%, 23%);
+
+// $color6: #12232e;
+$color7: #007cc7;
+$color8: #4da8da;
+$color9: #203647;
+$color10: #eefbfb;
+
+$color11: #a0d2eb;
+$color12: #e5eaf5;
+$color13: #d0bdf4;
+$color14: #8458b3;
+$color15: #a28089;
+
+@import url('https://fonts.googleapis.com/css2?family=Belanosima&family=Yellowtail&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&family=Roboto&display=swap');
+@mixin font-Belanosima {
+    font-family: 'Belanosima', sans-serif;
+}
+@mixin font-Caveat {
+    font-family: 'Yellowtail', cursive;
+}
+@mixin font-Nunito {
+    font-family: 'Nunito Sans', sans-serif;
+}
+@mixin font-Roboto {
+    font-family: 'Roboto', sans-serif;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0%;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
+
+$post-border: 0.125em solid black;
+$post-shadow: 3px 3px 0px 0px #000000;
+a,
+a:visited,
+a:hover {
+    color: unset;
+}
+
+@mixin transition-mid {
+    transition: 300ms linear;
+}
+
+@mixin transition-fast {
+    transition: 150ms linear;
+}
+
+.button-sq {
+    all: unset;
+    border: 0.125em solid $color5;
+    padding: 0.4em;
+    box-shadow: 2px 2px 0px 1px $color5;
+    cursor: pointer;
+    transition: all 200ms linear, transform 50ms linear;
+    user-select: none;
+    text-align: center;
+    padding-bottom: 0.5em;
+
+    &:hover {
+        background-color: $color4;
+        color: $color1;
+    }
+    &:active {
+        transform: translate(1px, 1px);
+        // box-shadow: 1px 1px 0px 0px black;
+        box-shadow: 1px 1px 0px 1px $color5;
+        background-color: darken($color: $color4, $amount: 25%);
+    }
+}
+
+$mobile-width: 650px;
+$tablet-width: 1000px;

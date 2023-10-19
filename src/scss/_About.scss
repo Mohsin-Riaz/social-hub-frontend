@@ -1,0 +1,38 @@
+@import './config';
+
+.about {
+    display: flex;
+    flex-direction: column;
+    background-color: $color3;
+    width: fit-content;
+    padding: 1em;
+    border-radius: 0.125em;
+    box-shadow: $post-shadow;
+    border: 1px solid $color5;
+    gap: 1em;
+    width: 50%;
+    margin: 2em auto;
+    &-head {
+        font-size: larger;
+        margin-inline-start: 5%;
+    }
+    &-stack {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25em;
+        margin-inline-start: 7%;
+        font-size: large;
+        &-item {
+            display: grid;
+            gap: 0.5em;
+            grid-template-columns: 5% 75%;
+            margin-inline-start: 10%;
+        }
+    }
+}
+
+@media (width < $tablet-width) {
+    .about {
+        width: 90%;
+    }
+}
