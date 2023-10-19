@@ -1,8 +1,10 @@
 const backendURL = import.meta.env.VITE_NODE_ENV
     ? import.meta.env.VITE_BACKEND_SERVER_URL
-    : import.meta.env.VITE_AWS_LAMBDA_BACKEND
+    : import.meta.env.VITE_AWS_LAMBDA_BACKEND;
 
-import axios from 'axios'
+console.log(backendURL);
+
+import axios from 'axios';
 // axios.defaults.withCredentials = true
 // axios.defaults.headers = { 'Content-Type': 'application/json' }
 
@@ -15,7 +17,7 @@ export async function auth_login({ email, password }) {
         withCredentials: true,
     })
         .then((response) => response)
-        .catch((error) => console.log(error))
+        .catch((error) => console.log(error));
 }
 
 export async function auth_signup(data) {
@@ -27,7 +29,7 @@ export async function auth_signup(data) {
         withCredentials: true,
     })
         .then((response) => response)
-        .catch((error) => console.log(error))
+        .catch((error) => console.log(error));
 }
 
 export async function auth_logout() {
@@ -38,5 +40,5 @@ export async function auth_logout() {
         withCredentials: true,
     })
         .then((response) => response)
-        .catch((error) => console.log(error))
+        .catch((error) => console.log(error));
 }
