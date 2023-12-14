@@ -2,8 +2,6 @@ const backendURL = import.meta.env.VITE_NODE_ENV
     ? import.meta.env.VITE_BACKEND_SERVER_URL
     : import.meta.env.VITE_AWS_LAMBDA_BACKEND;
 
-console.log(backendURL);
-
 import axios from 'axios';
 // axios.defaults.withCredentials = true
 // axios.defaults.headers = { 'Content-Type': 'application/json' }

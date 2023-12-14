@@ -81,7 +81,6 @@ const Login = () => {
             ? import.meta.env.VITE_BACKEND_SERVER_URL
             : import.meta.env.VITE_AWS_LAMBDA_BACKEND;
 
-        console.log(backendURL);
         // console.log(
         //     !!import.meta.env.VITE_NODE_ENV,
         //     import.meta.env.VITE_BACKEND_SERVER_URL,
