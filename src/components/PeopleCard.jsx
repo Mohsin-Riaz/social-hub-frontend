@@ -1,5 +1,5 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
+import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 const PeopleCard = (props) => {
     if (props)
@@ -21,7 +21,7 @@ const PeopleCard = (props) => {
                     </div>
                 </div>
             </NavLink>
-        )
-}
+        );
+};
 
-export default PeopleCard
+export default PeopleCard;

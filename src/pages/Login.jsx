@@ -1,11 +1,13 @@
-import fs from 'fs/promises';
 import React, { useState } from 'react';
-import { FcGoogle } from 'react-icons/fc';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+
 import { auth_login } from '../api/auth_calls';
 import { createAvatar } from '../api/avatar_calls';
 import { createPeople } from '../api/people_calls';
+
+import { FcGoogle } from 'react-icons/fc';
+
 import Button from '../components/Button';
 import FileUpload from '../components/FileUpload';
 import InputText from '../components/InputText';
@@ -25,11 +27,9 @@ const Login = () => {
         birthdate: '',
     });
 
-    // function validate(input) {}
-
     async function loginHandler() {
         const response = await auth_login(info);
-        if (response?.success) navigate('/profile');
+        if (response?.data?.success) window.location.href = 'profile';
         else setError(true);
         return;
     }
@@ -46,7 +46,8 @@ const Login = () => {
             avatarId: personCreated.data.peopleId,
         });
 
-        if (avatarCreated?.success) navigate('/profile');
+        if (avatarCreated?.success) window.location.href = 'profile';
+        // navigate('/profile');
 
         setError(true);
         return;
@@ -80,13 +81,6 @@ const Login = () => {
         const backendURL = !!import.meta.env.VITE_NODE_ENV
             ? import.meta.env.VITE_BACKEND_SERVER_URL
             : import.meta.env.VITE_AWS_LAMBDA_BACKEND;
-
-        // console.log(
-        //     !!import.meta.env.VITE_NODE_ENV,
-        //     import.meta.env.VITE_BACKEND_SERVER_URL,
-        //     import.meta.env.VITE_AWS_LAMBDA_BACKEND,
-        //     backendURL
-        // );
 
         const options = {
             redirect_uri: backendURL + 'api/auth/google',
@@ -124,10 +118,7 @@ const Login = () => {
                 </div>
 
                 <div className="login-form">
-                    {error && (
-                        <div style={{ color: 'red' }}>invalid credentials</div>
-                    )}
-
+                    <span>{error ? 'INVALID CREDENTIALS' : ''}</span>
                     <InputText
                         type="text"
                         name="email"

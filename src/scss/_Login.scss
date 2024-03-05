@@ -13,13 +13,21 @@
 
     &-form {
         display: grid;
-        grid-template-rows: 10% 10%;
+        grid-template-rows: 10% 10% 10%;
         align-items: center;
         & > div {
             margin-top: 50%;
             display: grid;
             width: 100%;
             grid-template-columns: 22% 78%;
+        }
+        & > span {
+            // text-align: center;
+            color: red;
+            margin: 5em auto auto auto;
+
+            // margin: auto;
+            // position: absolute;
         }
     }
 

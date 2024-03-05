@@ -1,26 +1,31 @@
 import { format, parseISO } from 'date-fns';
 import { React, useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 
+//  Redux
+import { useDispatch, useSelector } from 'react-redux';
+import { addFriend, removeFriend } from '../features/user/userSlice';
+
+//  Icons
+import { AiOutlineMail } from 'react-icons/ai';
 import { FaBirthdayCake } from 'react-icons/fa';
 import { FiMap } from 'react-icons/fi';
 import { IoPersonAdd, IoPersonRemove } from 'react-icons/io5';
 import { MdAlternateEmail } from 'react-icons/md';
-import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+
+//  API Calls
 import {
     addFriendApi,
     getPeopleById,
     removeFriendApi,
 } from '../api/people_calls';
+
+//  JSX Components
 import Button from '../components/Button';
-
-import { AiOutlineMail } from 'react-icons/ai';
-
-// import PeopleCard from '../components/PeopleCard'
 import PostsContainer from '../components/PostsContainer';
-import { addFriend, removeFriend } from '../features/user/userSlice';
 import LoadingContainer from './LoadingContainer';
 import PostBox from './PostBox';
+// import PeopleCard from '../components/PeopleCard'
 
 const ProfileContainer = (peopleInfo) => {
     const { peopleId } = useParams();
@@ -62,8 +67,6 @@ const ProfileContainer = (peopleInfo) => {
     if (!peopleInfo) return <LoadingContainer />;
 
     const backgroundImage = `url(../../database/backgrounds/background0.webp`;
-    // `url(../../database/backgrounds/background${Math.floor(Math.random() * 5)}.webp)`
-
     return (
         <section className="profile-container">
             <div

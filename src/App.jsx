@@ -32,7 +32,7 @@ function App() {
 
     return (
         <Routes>
-            <Route i path="/" element={<Layout />}>
+            <Route path="/" element={<Layout />}>
                 <Route index to="/" element={<Home />} />
                 <Route path="/profile" element={<Profile />}>
                     <Route path=":peopleId" element={<Profile />} />
@@ -44,7 +44,7 @@ function App() {
                 <Route path="/about" element={<About />} />
                 <Route path="/chat" element={<Chat />} />
             </Route>
-            <Route path="*" element={<NotFound />} />
+            {/* <Route path="*" element={<NotFound />} /> */}
         </Routes>
     );
 }

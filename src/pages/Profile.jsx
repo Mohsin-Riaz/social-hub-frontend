@@ -1,29 +1,16 @@
-// import { format, parseISO } from 'date-fns'
 import { React, useEffect, useState } from 'react';
-
-// import { FaBirthdayCake } from 'react-icons/fa'
-// import { FiMap } from 'react-icons/fi'
-// import { MdAlternateEmail } from 'react-icons/md'
+import { useNavigate, useParams } from 'react-router-dom';
 
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate, useParams } from 'react-router-dom';
-import {
-    addFriendApi,
-    getPeopleById,
-    removeFriendApi,
-} from '../api/people_calls';
-// import Button from '../components/Button'
-// import PeopleCard from '../components/PeopleCard'
-// import PostsContainer from '../components/PostsContainer'
+import { getPostItems } from '../features/post/postSlice';
+
+import { getPeopleById } from '../api/people_calls';
 
 import LoadingContainer from '../components/LoadingContainer';
 import ProfileContainer from '../components/ProfileContainer';
-import { getPostItems } from '../features/post/postSlice';
-// import { addFriend, removeFriend } from '../features/user/userSlice'
 
 const Profile = () => {
     const { peopleId } = useParams();
-
     const { userInfo, userLoading } = useSelector((store) => store.user);
     const [peopleInfo, setPeopleInfo] = useState();
     const [isLoading, setIsLoading] = useState(true);
@@ -41,11 +28,12 @@ const Profile = () => {
                         setPeopleInfo(res.data);
                     })
                     .catch(() => {
-                        navigate('/');
+                        // navigate('/');
+                        window.location.href = '/';
                     });
                 dispatch(getPostItems({ peopleId: peopleId }));
             } else {
-                if (!userInfo) navigate('/login');
+                if (!userInfo) window.location.href = 'login';
                 setPeopleInfo({ ...userInfo });
                 dispatch(getPostItems({ peopleId: userInfo?.peopleId }));
             }

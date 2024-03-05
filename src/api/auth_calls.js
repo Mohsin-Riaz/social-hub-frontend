@@ -14,7 +14,9 @@ export async function auth_login({ email, password }) {
         data: { email: email, password: password },
         withCredentials: true,
     })
-        .then((response) => response)
+        .then((response) => {
+            return response;
+        })
         .catch((error) => console.log(error));
 }
 
