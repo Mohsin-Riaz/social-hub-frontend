@@ -29,8 +29,10 @@ const Login = () => {
 
     async function loginHandler() {
         const response = await auth_login(info);
-        if (response?.data?.success) window.location.href = 'profile';
-        else setError(true);
+        if (response?.data?.success)
+            // navigate('/', { replace: true, relative: true });
+            window.location.pathname = 'social-hub-frontend/profile';
+        // else setError(true);
         return;
     }
 
@@ -46,9 +48,10 @@ const Login = () => {
             avatarId: personCreated.data.peopleId,
         });
 
-        if (avatarCreated?.success) window.location.href = 'profile';
-        // navigate('/profile');
+        if (avatarCreated?.success)
+            window.location.pathname = 'social-hub-frontend/profile';
 
+        // navigate('/profile', { replace: true });
         setError(true);
         return;
     }
@@ -169,9 +172,7 @@ const Login = () => {
                     </div>
                 </div>
                 <div className="signup-form">
-                    {error && (
-                        <div style={{ color: 'red' }}>invalid credentials</div>
-                    )}
+                    <span>{error ? 'INVALID CREDENTIALS' : ''}</span>
 
                     <h3>Required</h3>
 

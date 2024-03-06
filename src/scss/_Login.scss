@@ -60,6 +60,11 @@
             display: grid;
             grid-template-columns: 22% 78%;
         }
+        & > span {
+            color: red;
+            position: absolute;
+            top: 25%;
+        }
     }
 
     &-fileupload {

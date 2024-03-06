@@ -2,7 +2,8 @@ import React from 'react';
 
 const NotFound = () => {
     setTimeout(() => {
-        window.location.href = '/';
+        // navigate('/', { replace: true });
+        window.location.pathname = 'social-hub-frontend';
     }, 2000);
 
     return (

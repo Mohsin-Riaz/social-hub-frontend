@@ -28,12 +28,12 @@ const Profile = () => {
                         setPeopleInfo(res.data);
                     })
                     .catch(() => {
-                        // navigate('/');
-                        window.location.href = '/';
+                        navigate('/', { replace: true, relative: true });
                     });
                 dispatch(getPostItems({ peopleId: peopleId }));
             } else {
-                if (!userInfo) window.location.href = 'login';
+                if (!userInfo)
+                    navigate('/login', { replace: true, relative: true });
                 setPeopleInfo({ ...userInfo });
                 dispatch(getPostItems({ peopleId: userInfo?.peopleId }));
             }
