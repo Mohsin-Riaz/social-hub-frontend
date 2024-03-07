@@ -30,9 +30,9 @@ const Login = () => {
     async function loginHandler() {
         const response = await auth_login(info);
         if (response?.data?.success)
-            // navigate('/', { replace: true, relative: true });
-            window.location.pathname = 'social-hub-frontend/profile';
-        // else setError(true);
+            // navigate('profile', { replace: true, relative: true });
+            window.location.pathname = 'social-hub-frontend';
+        else setError(true);
         return;
     }
 
@@ -49,9 +49,8 @@ const Login = () => {
         });
 
         if (avatarCreated?.success)
-            window.location.pathname = 'social-hub-frontend/profile';
-
-        // navigate('/profile', { replace: true });
+            // navigate('/profile', { replace: true, relative: true });
+            window.location.pathname = 'social-hub-frontend';
         setError(true);
         return;
     }
