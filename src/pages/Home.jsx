@@ -24,7 +24,7 @@ const Home = () => {
             '/social-hub-frontend',
             import.meta.env.VITE_CLIENT_URL
         );
-        window.location = url.toString();
+        window.location = 'https://' + url.toString();
     }
 
     useEffect(() => {
