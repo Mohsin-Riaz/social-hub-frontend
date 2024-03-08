@@ -11,11 +11,11 @@ import { store } from './store.js';
 // const basename = '/social-hub-frontend/';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-    <React.StrictMode>
-        <Provider store={store}>
-            <BrowserRouter basename="social-hub-frontend">
-                <App />
-            </BrowserRouter>
-        </Provider>
-    </React.StrictMode>
+    // <React.StrictMode>
+    <Provider store={store}>
+        <BrowserRouter basename="social-hub-frontend">
+            <App />
+        </BrowserRouter>
+    </Provider>
+    // </React.StrictMode>
 );

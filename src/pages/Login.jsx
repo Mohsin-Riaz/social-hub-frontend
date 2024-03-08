@@ -68,7 +68,7 @@ const Login = () => {
     }
 
     function clickHandler(e) {
-        setLoginForm(!loginForm);
+        setLoginForm(() => !loginForm);
         setInfo({ ...info, email: '', password: '' });
         setError(false);
     }

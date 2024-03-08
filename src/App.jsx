@@ -11,6 +11,7 @@ import {
     Account,
     Chat,
     Friends,
+    Google,
     Home,
     Login,
     Logout,
@@ -42,7 +43,7 @@ function App() {
                 <Route path="/logout" element={<Logout />} />
                 <Route path="/account" element={<Account />} />
                 <Route path="/about" element={<About />} />
-                <Route path="/chat" element={<Chat />} />
+                <Route path="/google" element={<Google />} />
             </Route>
             {/* <Route path="*" element={<NotFound />} /> */}
         </Routes>
