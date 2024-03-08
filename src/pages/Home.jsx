@@ -20,11 +20,11 @@ const Home = () => {
     if (!!search) {
         const jwt = search.slice(1).split('=');
         Cookies.set(jwt[0], jwt[1], { expires: 7 });
-        const url = new URL(
-            '/social-hub-frontend',
-            import.meta.env.VITE_CLIENT_URL
-        );
-        window.location = 'https://' + url.toString();
+        // const url = new URL(
+        //     '/social-hub-frontend',
+        //     import.meta.env.VITE_CLIENT_URL
+        // );
+        window.location = 'https://mohsin-riaz.github.io/social-hub-frontend';
     }
 
     useEffect(() => {
