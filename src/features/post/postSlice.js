@@ -1,10 +1,10 @@
-import { createAsyncThunk, createSlice, current } from '@reduxjs/toolkit'
-import { getPost, getPostByQuery } from '../../api/post_calls'
+import { createAsyncThunk, createSlice, current } from '@reduxjs/toolkit';
+import { getPost, getPostByQuery } from '../../api/post_calls';
 
 const initialState = {
     postItems: [],
     postsLoading: true,
-}
+};
 
 export const getPostItems = createAsyncThunk(
     'post/getPostItems',
@@ -14,13 +14,13 @@ export const getPostItems = createAsyncThunk(
             // console.log(thunkAPI);
             // console.log(thunkAPI.getState());
             // thunkAPI.dispatch(openModal());
-            const resp = await getPostByQuery(args)
-            return resp?.data ? resp.data : resp
+            const resp = await getPostByQuery(args);
+            return resp?.data ? resp.data : resp;
         } catch (error) {
-            return thunkAPI.rejectWithValue('something went wrong')
+            return thunkAPI.rejectWithValue('something went wrong');
         }
     }
-)
+);
 
 const postSlice = createSlice({
     name: 'post',
@@ -28,57 +28,57 @@ const postSlice = createSlice({
     reducers: {
         createPostSlice: (state, { payload }) => {
             // console.log(current(state))
-            state.postItems.push(payload)
+            state.postItems.push(payload);
         },
         updatePostSlice: (state, { payload }) => {
-            const keys = Object.keys(payload)
+            const keys = Object.keys(payload);
             const postItem = state.postItems.find(
                 (item) => item.postId === payload.postId
-            )
+            );
             for (const key of keys) {
-                postItem[key] = payload[key]
+                postItem[key] = payload[key];
             }
         },
         likePostSlice: (state, { payload }) => {
             const postItem = state.postItems.find(
                 (item) => item.postId === payload.postId
-            )
-            postItem.postLikes += 1
+            );
+            postItem.postLikes += 1;
         },
         deletePostSlice: (state, { payload }) => {
             state.postItems = state.postItems.filter(
                 (item) => item.postId !== payload.postId
-            )
+            );
         },
         postCommentSlice: (state, { payload }) => {
             const postItem = state.postItems.find(
                 (item) => item.postId === payload.postId
-            )
-            postItem.postComments.push(payload)
+            );
+            postItem.postComments.push(payload);
         },
         deleteCommentSlice: (state, { payload }) => {
             const postItem = state.postItems.find(
                 (item) => item.postId === payload.postId
-            )
+            );
             postItem.postComments = postItem.postComments.filter(
                 (item) => item.commentId != payload.commentId
-            )
+            );
         },
     },
     extraReducers: (builder) => {
         builder
             .addCase(getPostItems.pending, (state) => {
-                state.postsLoading = true
+                state.postsLoading = true;
             })
             .addCase(getPostItems.fulfilled, (state, { payload }) => {
-                state.postsLoading = false
-                state.postItems = payload
+                state.postItems = payload;
+                state.postsLoading = false;
             })
             .addCase(getPostItems.rejected, (state, action) => {
-                state.postsLoading = false
-            })
+                state.postsLoading = false;
+            });
     },
-})
+});
 
 export const {
     createPostSlice,
@@ -87,6 +87,6 @@ export const {
     deletePostSlice,
     postCommentSlice,
     deleteCommentSlice,
-} = postSlice.actions
+} = postSlice.actions;
 
-export default postSlice.reducer
+export default postSlice.reducer;

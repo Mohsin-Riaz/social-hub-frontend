@@ -1,7 +1,7 @@
 // import {} from '@reduxjs/toolkit'
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useSearchParams } from 'react-router-dom';
 import LoadingContainer from './components/LoadingContainer';
 import { getUserInfo } from './features/user/userSlice';
 import './main.css';
@@ -18,13 +18,17 @@ import {
     NotFound,
     Profile,
 } from './pages/pages';
-
 function App() {
     const { userInfo, userLoading } = useSelector((store) => store.user);
     const dispatch = useDispatch();
+    const [search] = useSearchParams();
 
     useEffect(() => {
-        dispatch(getUserInfo());
+        if (!!userInfo) {
+            const googleJWT = search.get('jwt');
+            if (googleJWT) dispatch(getUserInfo(googleJWT));
+            else dispatch(getUserInfo());
+        }
     }, []);
 
     if (userLoading) {

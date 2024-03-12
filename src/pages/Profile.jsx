@@ -19,7 +19,7 @@ const Profile = () => {
 
     useEffect(() => {
         let cancelled;
-        if (cancelled) return;
+        if (cancelled || !isLoading) return;
 
         async function fetchProfile() {
             if (peopleId && peopleId != userInfo?.peopleId) {
@@ -45,8 +45,7 @@ const Profile = () => {
             setIsLoading(false);
         };
     }, []);
-
-    if (!peopleInfo || userLoading || isLoading) return <LoadingContainer />;
+    // if (isLoading) return <LoadingContainer />;
 
     //USER PROFILE
     return <ProfileContainer {...peopleInfo} />;

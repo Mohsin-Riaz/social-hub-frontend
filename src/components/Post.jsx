@@ -114,20 +114,7 @@ const Post = (props) => {
 
                             {!!postImage && (
                                 <div className="post_content_info__content_image">
-                                    <img
-                                        src={postImage}
-                                        loading="lazy"
-                                        // style={{
-                                        //     backgroundImage: `url(${
-                                        //         postImage.split('.webp')[0]
-                                        //     }-thumbnail.webp`,
-                                        //     backgroundSize: 'cover',
-                                        //     backgroundPosition: 'center',
-                                        //     width: '80%',
-                                        //     minWidth: '100px',
-                                        //     maxWidth: '900px',
-                                        // }}
-                                    />
+                                    <img src={postImage} loading="lazy" />
                                 </div>
                             )}
 

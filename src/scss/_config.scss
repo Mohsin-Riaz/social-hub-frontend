@@ -41,6 +41,15 @@ $color15: #a28089;
     }
 }
 
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
 $post-border: 0.125em solid black;
 $post-shadow: 3px 3px 0px 0px #000000;
 a,

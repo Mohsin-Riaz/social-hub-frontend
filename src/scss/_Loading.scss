@@ -1,0 +1,11 @@
+@import './config';
+
+.loading-wrapper {
+    font-size: 2em;
+    display: flex;
+    justify-content: center;
+}
+
+.loading-spin {
+    animation: spin 500ms ease-in-out infinite;
+}

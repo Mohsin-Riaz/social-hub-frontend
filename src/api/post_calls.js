@@ -41,6 +41,7 @@ export async function getPostByQuery(parameters) {
         });
     } catch (error) {
         console.log(error);
+        return;
     }
 }
 
@@ -58,7 +59,6 @@ export async function createPost(data) {
 }
 
 export async function updatePostApi({ postId }, data) {
-    console.log(postId, data);
     try {
         return await axios({
             method: 'PATCH',

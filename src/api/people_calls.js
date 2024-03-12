@@ -30,10 +30,13 @@ export async function getPeopleById({ peopleId }) {
     }
 }
 
-export async function getUser() {
+export async function getUser(jwtToken) {
     return await axios({
         method: 'get',
         url: backendURL + `api/people/getuser/`,
+        params: {
+            googleJWT: jwtToken,
+        },
     })
         .then((response) => {
             return response.data;

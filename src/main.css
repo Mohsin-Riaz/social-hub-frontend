@@ -24,12 +24,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans&family=Roboto&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Belanosima&family=Yellowtail&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans&family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Belanosima&family=Yellowtail&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans&family=Roboto&display=swap");
 @keyframes fade-in {
   0% {
     opacity: 0%;
   }
   100% {
     opacity: 100%;
+  }
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }
 a,
@@ -67,6 +77,14 @@ a:hover {
   }
   100% {
     opacity: 100%;
+  }
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }
 a,
@@ -196,6 +214,14 @@ a:hover {
     opacity: 100%;
   }
 }
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 a,
 a:visited,
 a:hover {
@@ -276,6 +302,14 @@ a:hover {
   }
   100% {
     opacity: 100%;
+  }
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }
 a,
@@ -568,6 +602,14 @@ a:hover {
     opacity: 100%;
   }
 }
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 a,
 a:visited,
 a:hover {
@@ -743,6 +785,14 @@ a:hover {
   }
   100% {
     opacity: 100%;
+  }
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }
 a,
@@ -947,6 +997,14 @@ a:hover {
     opacity: 100%;
   }
 }
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 a,
 a:visited,
 a:hover {
@@ -1062,6 +1120,14 @@ a:hover {
   }
   100% {
     opacity: 100%;
+  }
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }
 a,
@@ -1229,6 +1295,14 @@ a:hover {
   }
   100% {
     opacity: 100%;
+  }
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }
 a,
@@ -1530,6 +1604,14 @@ a:hover {
     opacity: 100%;
   }
 }
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 a,
 a:visited,
 a:hover {
@@ -1632,6 +1714,14 @@ a:hover {
     opacity: 100%;
   }
 }
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 a,
 a:visited,
 a:hover {
@@ -1704,6 +1794,14 @@ a:hover {
   }
   100% {
     opacity: 100%;
+  }
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }
 a,
@@ -1787,6 +1885,14 @@ a:hover {
     opacity: 100%;
   }
 }
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 a,
 a:visited,
 a:hover {
@@ -1843,6 +1949,61 @@ a:hover {
     place-content: center;
   }
 }
+@keyframes fade-in {
+  0% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+a,
+a:visited,
+a:hover {
+  color: unset;
+}
+
+.button-sq {
+  all: unset;
+  border: 0.125em solid #292f42;
+  padding: 0.4em;
+  box-shadow: 2px 2px 0px 1px #292f42;
+  cursor: pointer;
+  transition: all 200ms linear, transform 50ms linear;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  text-align: center;
+  padding-bottom: 0.5em;
+}
+.button-sq:hover {
+  background-color: #876372;
+  color: #f1eeef;
+}
+.button-sq:active {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0px 1px #292f42;
+  background-color: #3d2d34;
+}
+
+.loading-wrapper {
+  font-size: 2em;
+  display: flex;
+  justify-content: center;
+}
+
+.loading-spin {
+  animation: spin 500ms ease-in-out infinite;
+}
+
 html {
   overflow-x: hidden;
 }

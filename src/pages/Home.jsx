@@ -5,7 +5,7 @@ import LoadingContainer from '../components/LoadingContainer';
 
 import Cookies from 'js-cookie';
 import { MdOutlineCancel, MdOutlineCheckCircle } from 'react-icons/md';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useSearchParams } from 'react-router-dom';
 import Button from '../components/Button';
 import Modal from '../components/Modal';
 import PostBox from '../components/PostBox';
@@ -16,16 +16,16 @@ const Home = () => {
     const dispatch = useDispatch();
     const { postItems, postLoading } = useSelector((store) => store.post);
     const { userInfo, userLoading } = useSelector((store) => store.user);
-    const { search } = useLocation();
-    if (!!search) {
-        const jwt = search.slice(1).split('=');
-        Cookies.set(jwt[0], jwt[1], { expires: 7 });
-        // const url = new URL(
-        //     '/social-hub-frontend',
-        //     import.meta.env.VITE_CLIENT_URL
-        // );
-        window.location = 'https://mohsin-riaz.github.io/social-hub-frontend';
-    }
+    // console.log(search.get('jwt'));
+    // if (!!search) {
+    //     const jwt = search.slice(1).split('=');
+    //     Cookies.set(jwt[0], jwt[1], { expires: 7, sameSite: 'None' });
+    //     // const url = new URL(
+    //     //     '/social-hub-frontend',
+    //     //     import.meta.env.VITE_CLIENT_URL
+    //     // );
+    //     window.location = `${import.meta.env.VITE_CLIENT_URL}`;
+    // }
 
     useEffect(() => {
         dispatch(getPostItems());
