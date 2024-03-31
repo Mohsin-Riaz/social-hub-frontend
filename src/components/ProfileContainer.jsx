@@ -66,7 +66,7 @@ const ProfileContainer = (peopleInfo) => {
 
     if (!peopleInfo) return <LoadingContainer />;
 
-    const backgroundImage = `url(../../database/backgrounds/background0.webp`;
+    const backgroundImage = `url(/background0.webp)`;
     return (
         <section className="profile-container">
             <div
