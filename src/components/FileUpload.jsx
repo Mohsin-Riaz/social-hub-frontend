@@ -1,19 +1,19 @@
-import React, { useRef, useState } from 'react'
-import { AiOutlineUpload } from 'react-icons/all'
-import Button from './Button'
+import React, { useRef, useState } from 'react';
+import { AiOutlineUpload } from 'react-icons/all';
+import Button from './Button';
 
 const FileUpload = (props) => {
-    const [dragActive, setDragActive] = useState(false)
-    const [currentFile, setCurrentFile] = useState('')
-    const dropRef = useRef()
+    const [dragActive, setDragActive] = useState(false);
+    const [currentFile, setCurrentFile] = useState('');
+    const dropRef = useRef();
 
     const toBase64 = (file) =>
         new Promise((resolve, reject) => {
-            const reader = new FileReader()
-            reader.readAsDataURL(file)
-            reader.onload = () => resolve(reader.result)
-            reader.onerror = reject
-        })
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload = () => resolve(reader.result);
+            reader.onerror = reject;
+        });
 
     // const fileHandler = async (e) => {
     //     e.preventDefault()
@@ -26,31 +26,31 @@ const FileUpload = (props) => {
     // }
 
     function handleDragEnter(e) {
-        setDragActive(true)
+        setDragActive(true);
     }
 
     function handleDragLeave(e) {
-        setDragActive(false)
+        setDragActive(false);
     }
 
     function handleDrop(e) {
-        e.preventDefault()
-        e.stopPropagation()
-        const file = e.dataTransfer.files[0]
-        fileValidator(file)
+        e.preventDefault();
+        e.stopPropagation();
+        const file = e.dataTransfer.files[0];
+        fileValidator(file);
     }
 
     function handleDragOver(event) {
-        event.preventDefault()
+        event.preventDefault();
     }
 
     async function fileValidator(file) {
         if (!file?.name?.endsWith('jpg' || 'jpeg')) {
-            return alert('Error, upload file must be jpg')
+            return alert('Error, upload file must be jpg');
         }
-        setCurrentFile(file)
-        const image = await toBase64(file)
-        props.fileUploadFunc(image)
+        setCurrentFile(file);
+        // const image = await toBase64(file)
+        props.fileUploadFunc(file);
     }
 
     return (
@@ -82,7 +82,7 @@ const FileUpload = (props) => {
                 <input
                     type="file"
                     onChange={(e) => {
-                        fileValidator(e.target.files[0])
+                        fileValidator(e.target.files[0]);
                     }}
                     hidden
                     ref={dropRef}
@@ -136,7 +136,7 @@ const FileUpload = (props) => {
         //         //     </label>
         //     }
         // </section>
-    )
-}
+    );
+};
 
-export default FileUpload
+export default FileUpload;

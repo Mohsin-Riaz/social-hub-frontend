@@ -62,6 +62,8 @@
                         height: auto; /* maintain aspect ratio*/
                         margin: auto; /*optional centering of image*/
                         box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.636);
+                        object-fit: contain;
+                        max-height: 300px;
                     }
                 }
 

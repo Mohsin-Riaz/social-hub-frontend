@@ -124,14 +124,31 @@ export async function deleteComment({ postId, peopleId, commentId }) {
 }
 
 export async function createPostImage({ postImage, postId }) {
+    const imageData = new FormData();
+    imageData.append('avatar', postImage);
     try {
         return await axios({
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            url: imageURL + postId,
-            data: { imageData: postImage, imageType: 'post' },
+            headers: {
+                'content-type': 'multipart/form-data',
+            },
+            url: imageURL + 'p/' + postId,
+            data: imageData,
         }).then((response) => response.data);
     } catch (error) {
         console.log(error);
     }
 }
+
+// export async function createPostImage({ postImage, postId }) {
+//     try {
+//         return await axios({
+//             method: 'POST',
+//             headers: { 'Content-Type': 'application/json' },
+//             url: imageURL + postId,
+//             data: { imageData: postImage, imageType: 'post' },
+//         }).then((response) => response.data);
+//     } catch (error) {
+//         console.log(error);
+//     }
+// }
