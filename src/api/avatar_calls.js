@@ -50,7 +50,7 @@ export const deleteAvatar = async ({ avatarId }) => {
     try {
         return await axios({
             method: 'DELETE',
-            url: url + avatarId,
+            url: url + 'd/' + avatarId,
         }).then((response) => response.data);
     } catch (error) {
         console.log(error);
