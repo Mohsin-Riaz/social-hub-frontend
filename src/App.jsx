@@ -29,7 +29,7 @@ function App() {
             const googleJWT = search.get('jwt');
             if (googleJWT) {
                 (async function () {
-                    const response = await auth_google_login(googleJWT);
+                    const response = await auth_google_login({ googleJWT });
                     if (response?.data?.success)
                         dispatch(getUserInfo(googleJWT));
                 })();

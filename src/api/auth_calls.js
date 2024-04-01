@@ -20,12 +20,12 @@ export async function auth_login({ email, password }) {
         .catch((error) => console.log(error));
 }
 
-export async function auth_google_login(jwt) {
+export async function auth_google_login(googleJWT) {
     return await axios({
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         url: backendURL + `api/auth/logingoogle`,
-        data: { jwt: jwt },
+        data: { googleJWT: googleJWT },
         withCredentials: true,
     })
         .then((response) => {
