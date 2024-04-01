@@ -20,6 +20,20 @@ export async function auth_login({ email, password }) {
         .catch((error) => console.log(error));
 }
 
+export async function auth_google_login(jwt) {
+    return await axios({
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        url: backendURL + `api/auth/logingoogle`,
+        data: { jwt: jwt },
+        withCredentials: true,
+    })
+        .then((response) => {
+            return response;
+        })
+        .catch((error) => console.log(error));
+}
+
 export async function auth_signup(data) {
     return await axios({
         method: 'POST',
