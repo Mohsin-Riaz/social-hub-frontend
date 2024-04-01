@@ -2,6 +2,7 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Route, Routes, useSearchParams } from 'react-router-dom';
+import { auth_google_login } from './api/auth_calls';
 import LoadingContainer from './components/LoadingContainer';
 import { getUserInfo } from './features/user/userSlice';
 import './main.css';
@@ -26,8 +27,13 @@ function App() {
     useEffect(() => {
         if (!!userInfo) {
             const googleJWT = search.get('jwt');
-            if (googleJWT) dispatch(getUserInfo(googleJWT));
-            else dispatch(getUserInfo());
+            if (googleJWT) {
+                (async function () {
+                    const response = await auth_google_login(googleJWT);
+                    if (response?.data?.success)
+                        dispatch(getUserInfo(googleJWT));
+                })();
+            } else dispatch(getUserInfo());
         }
     }, []);
 
