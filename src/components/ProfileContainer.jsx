@@ -66,14 +66,14 @@ const ProfileContainer = (peopleInfo) => {
 
     if (!peopleInfo) return <LoadingContainer />;
 
-    const backgroundImage = `url(/background0.webp)`;
     return (
         <section className="profile-container">
             <div
                 className="profile-info"
-                style={{
-                    backgroundImage: backgroundImage,
-                }}
+                // style={{
+                //     backgroundImage: '/background0.webp',
+                //     backgroundColor: 'red',
+                // }}
             >
                 <div className="profile-info_grid1">
                     <div className="profile-info_avatar">
