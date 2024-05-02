@@ -114,7 +114,11 @@ const Post = (props) => {
 
                             {!!postImage && (
                                 <div className="post_content_info__content_image">
-                                    <img src={postImage} loading="lazy" />
+                                    <img
+                                        src={postImage}
+                                        loading="lazy"
+                                        style={{ background: '#000000f7' }}
+                                    />
                                 </div>
                             )}
 
