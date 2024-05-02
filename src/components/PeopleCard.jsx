@@ -6,9 +6,7 @@ const PeopleCard = (props) => {
         return (
             <NavLink
                 key={props.peopleId}
-                to={`${import.meta.env.VITE_CLIENT_URL}profile/${
-                    props.peopleId
-                }`}
+                to={`profile/${props.peopleId}`}
                 className="people-card"
             >
                 <div className="people-card_container pad">
