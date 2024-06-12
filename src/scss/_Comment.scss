@@ -3,7 +3,6 @@
 .comment {
     display: grid;
     grid-template-columns: 20% 80%;
-    // border-top: 0.125em solid black;
     animation: fade-in 0.5s;
     box-shadow: 0px -2px 0px 0px $color3; // hsl(210, 13%, 50%, 0.5);
 
@@ -13,9 +12,7 @@
     padding-bottom: 0.4em;
     & > a {
         width: 60%;
-        // padding-right: 5%;
     }
-    // border-radius: 0.2em;
     &_content {
         display: grid;
         grid-template-columns: 92% 8%;
@@ -44,10 +41,6 @@
         }
     }
 }
-
-// .comments-wrapper {
-//     animation: fade-in 2s;
-// }
 
 .comment-box {
     display: grid;

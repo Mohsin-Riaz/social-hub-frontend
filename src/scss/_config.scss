@@ -83,7 +83,6 @@ a:hover {
     }
     &:active {
         transform: translate(1px, 1px);
-        // box-shadow: 1px 1px 0px 0px black;
         box-shadow: 1px 1px 0px 1px $color5;
         background-color: darken($color: $color4, $amount: 25%);
     }

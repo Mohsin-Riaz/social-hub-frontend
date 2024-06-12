@@ -14,20 +14,13 @@
         grid-template-columns: 94% 6%;
 
         &_info {
-            // display: grid;
-            // grid-auto-rows: auto;
-            // display: flex;
-            // align-items: center;
             &__content {
                 display: grid;
                 grid-auto-rows: auto;
                 height: 100%;
                 width: 100%;
-                // display: flex;
-                // flex-direction: column;
                 text-align: left;
                 align-items: center;
-                // vertical-align: middle;
                 margin-top: auto;
 
                 &_title {
@@ -38,19 +31,10 @@
 
                 &_image {
                     display: flex;
-                    // background-color: $color3;
-                    // background: linear-gradient(
-                    //     90deg,
-                    //     rgba(2, 0, 36, 0) 0%,
-                    //     $color3 10%,
-                    //     $color3 90%,
-                    //     rgba(0, 212, 255, 0) 100%
-                    // );
                     align-items: center;
-                    width: 100%; /*or whatever you choose*/
+                    width: 100%; /*choose image width*/
                     margin-top: 0.25em;
                     padding: 0.25em;
-                    // border-radius: 0.5em;
 
                     & img {
                         border-radius: 0.5em;
@@ -78,7 +62,6 @@
             &__stats {
                 &_likes {
                     all: unset;
-                    // position: relative;
                     top: 94%; //from grid 94%
                     left: 18%; //from grid 14%
                     display: flex;
@@ -123,9 +106,6 @@
         box-shadow: $post-shadow;
         margin-bottom: 0.5em;
         border-radius: 0.125em;
-        // &:last-child {
-        //     // box-shadow: 0px 2px 0px 0px magenta;
-        // }
     }
 }
 
@@ -142,11 +122,6 @@
     &:disabled {
         color: hsl(350, 100%, 70%);
     }
-
-    // &_liked {
-    //     all: unset;
-    //     color: hsl(350, 100%, 70%);
-    // }
 }
 
 .edit-button {
@@ -195,8 +170,6 @@
     .post {
         display: flex;
         flex-direction: column;
-        // grid-template-columns: none;
-        // grid-template-rows: 14% 86% 5%;
         border: $post-border;
         border-radius: 0.125em;
         box-shadow: $post-shadow;
@@ -207,20 +180,13 @@
             display: flex;
             flex-direction: column;
             &_info {
-                // display: grid;
-                // grid-auto-rows: auto;
-                // display: flex;
-                // align-items: center;
                 &__content {
                     display: grid;
                     grid-auto-rows: auto;
                     height: 100%;
                     width: 100%;
-                    // display: flex;
-                    // flex-direction: column;
                     text-align: left;
                     align-items: center;
-                    // vertical-align: middle;
                     margin-top: auto;
 
                     &_title {
@@ -231,19 +197,10 @@
 
                     &_image {
                         display: flex;
-                        // background-color: $color3;
-                        // background: linear-gradient(
-                        //     90deg,
-                        //     rgba(2, 0, 36, 0) 0%,
-                        //     $color3 10%,
-                        //     $color3 90%,
-                        //     rgba(0, 212, 255, 0) 100%
-                        // );
                         align-items: center;
                         width: auto;
                         margin-top: 0.25em;
                         padding: 0.25em;
-                        // border-radius: 0.5em;
 
                         & img {
                             border-radius: 0.5em;
@@ -269,7 +226,6 @@
                 &__stats {
                     &_likes {
                         all: unset;
-                        // position: relative;
                         top: 94%; //from grid 94%
                         left: 18%; //from grid 14%
                         display: flex;
@@ -315,9 +271,6 @@
             box-shadow: $post-shadow;
             margin-bottom: 0.5em;
             border-radius: 0.125em;
-            // &:last-child {
-            //     // box-shadow: 0px 2px 0px 0px magenta;
-            // }
         }
     }
 }

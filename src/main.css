@@ -129,9 +129,6 @@ a:hover {
   .people-card:hover .people-card_container {
     border: 1px solid hsla(210, 13%, 50%, 0.25);
     background-color: #546c82;
-    /*&_avatar {
-         animation: hover-animation 2s infinite;
-    }*/
   }
   .people-card_container {
     transition: 150ms linear;
@@ -371,7 +368,7 @@ a:hover {
 .post_content_info__content_image {
   display: flex;
   align-items: center;
-  width: 100%; /*or whatever you choose*/
+  width: 100%; /*choose image width*/
   margin-top: 0.25em;
   padding: 0.25em;
 }
@@ -1271,6 +1268,10 @@ a:hover {
   .signup-page {
     width: 90%;
   }
+  .login-page label,
+  .signup-page label {
+    font-size: 0.8em;
+  }
 }
 .login-form,
 .signup-form {
@@ -1282,6 +1283,10 @@ a:hover {
   padding: 1em;
   border-radius: 0.15em;
   box-shadow: 3px 3px 0px 0px #000000;
+}
+.login-form div,
+.signup-form div {
+  vertical-align: middle;
 }
 .login-form label,
 .signup-form label {
