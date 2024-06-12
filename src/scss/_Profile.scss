@@ -96,28 +96,8 @@
 @media (width<$mobile-width) {
     .profile {
         &-info {
-            &_avatar {
-                & > img {
-                }
-            }
-            &_grid1 {
-            }
-
             &_field {
                 font-size: 1.5dvh;
-                & > * {
-                }
-
-                &_name {
-                }
-
-                &_text {
-                }
-            }
-        }
-
-        &-button {
-            & > button {
             }
         }
     }
