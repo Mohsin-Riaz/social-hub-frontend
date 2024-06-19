@@ -22,7 +22,7 @@ const Login = () => {
         password: '',
         first_name: '',
         last_name: '',
-        avatar: '',
+        avatar: 'default',
         address: '',
         birthdate: '',
     });
@@ -37,22 +37,25 @@ const Login = () => {
     }
 
     async function signUpHandler() {
-        const personCreated = await createPeople({ ...info, avatar: null });
+        const personCreated = await createPeople({ ...info });
         if (!personCreated?.success) {
             setError(true);
             return;
         }
+        if (info.avatar !== 'default') {
+            const avatarCreated = await createAvatar({
+                avatarImg: info.avatar,
+                avatarId: personCreated.data.peopleId,
+            });
+            if (avatarCreated?.success)
+                console.log({ status: 201, message: 'avatar created' });
+        }
 
-        const avatarCreated = await createAvatar({
-            avatarImg: info.avatar,
-            avatarId: personCreated.data.peopleId,
-        });
-
-        if (avatarCreated?.success)
-            // navigate('/profile', { replace: true, relative: true });
-            window.location.pathname = 'social-hub-frontend';
-        setError(true);
-        return;
+        window.location.pathname = 'social-hub-frontend';
+        // if (avatarCreated?.success)
+        //     // navigate('/profile', { replace: true, relative: true });
+        // setError(true);
+        // return;
     }
 
     function changeHandler(e) {
@@ -227,9 +230,9 @@ const Login = () => {
                             type="date"
                             id="birthdate"
                             name="birthdate"
-                            defaultValue="1990-01-01"
+                            // defaultValue="1990-01-01"
                             min="1900-01-01"
-                            max="2005-06-30"
+                            max="2006-06-30"
                             onChange={(e) => changeHandler(e)}
                             info={info}
                             setInfo={setInfo}
