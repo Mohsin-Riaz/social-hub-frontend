@@ -12,8 +12,8 @@ import Button from '../components/Button';
 import FileUpload from '../components/FileUpload';
 import InputText from '../components/InputText';
 const Login = () => {
-    const { userInfo } = useSelector((store) => store.user);
-    const navigate = useNavigate();
+    // const { userInfo } = useSelector((store) => store.user);
+    // const navigate = useNavigate();
     // !!userInfo && navigate('/')
     const [loginForm, setLoginForm] = useState(true);
     const [error, setError] = useState(false);
