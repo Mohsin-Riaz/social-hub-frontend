@@ -2,6 +2,10 @@
 
 A full-stack social media web application that allows users to create, like, and comment on posts. Built with React frontend, Redux state management, RESTful APIs, and MongoDB database with secure OAuth2 authentication.
 
+Check out: 
+- [The Backend](https://github.com/Mohsin-Riaz/social-hub-backend) - A RESTful API backend for the social media application, providing secure authentication, user management, and posts/comments CRUD operations
+- [The Image Resizer](https://github.com/Mohsin-Riaz/social-hub-image-backend) - An Express.js service for uploading, resizing, and deleting images in AWS S3
+
 ## 🚀 Features
 
 - **User Authentication**: OAuth2 integration with Google accounts
